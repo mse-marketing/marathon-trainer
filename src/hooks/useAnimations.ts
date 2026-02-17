@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react';
-import { Animated } from 'react-native';
+import { Animated, Platform } from 'react-native';
+
+const useNative = Platform.OS !== 'web';
 
 export function useFadeIn(delay = 0) {
   const opacity = useRef(new Animated.Value(0)).current;
@@ -11,13 +13,13 @@ export function useFadeIn(delay = 0) {
         toValue: 1,
         duration: 500,
         delay,
-        useNativeDriver: true,
+        useNativeDriver: useNative,
       }),
       Animated.timing(translateY, {
         toValue: 0,
         duration: 500,
         delay,
-        useNativeDriver: true,
+        useNativeDriver: useNative,
       }),
     ]).start();
   }, []);
@@ -46,7 +48,7 @@ export function usePressAnimation() {
     Animated.spring(scale, {
       toValue: 0.98,
       friction: 8,
-      useNativeDriver: true,
+      useNativeDriver: useNative,
     }).start();
   };
 
@@ -54,7 +56,7 @@ export function usePressAnimation() {
     Animated.spring(scale, {
       toValue: 1,
       friction: 5,
-      useNativeDriver: true,
+      useNativeDriver: useNative,
     }).start();
   };
 

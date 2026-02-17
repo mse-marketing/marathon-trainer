@@ -22,13 +22,13 @@ export default function ScheduleScreen() {
 
   const generatePlan = useTrainingStore((s) => s.generatePlan);
 
-  const [selectedDays, setSelectedDays] = useState<number[]>([0, 2, 5]); // Mo, Mi, Sa
-  const [weeklyKm, setWeeklyKm] = useState('30');
-  const [goalHours, setGoalHours] = useState('4');
-  const [goalMinutes, setGoalMinutes] = useState('00');
+  const [selectedDays, setSelectedDays] = useState<number[]>([1, 3, 6]); // Di, Do, So
+  const [weeklyKm, setWeeklyKm] = useState('25');
+  const [goalHours, setGoalHours] = useState('3');
+  const [goalMinutes, setGoalMinutes] = useState('45');
 
-  // Marathon Prag: 4. Mai 2026
-  const marathonDate = '2026-05-04';
+  // Marathon Prag: 3. Mai 2026
+  const marathonDate = '2026-05-03';
 
   const runsPerWeek = selectedDays.length as 3 | 4 | 5;
   const isValid = selectedDays.length >= 3 && selectedDays.length <= 5 && parseInt(weeklyKm) > 0;
@@ -88,7 +88,7 @@ export default function ScheduleScreen() {
             <Text style={styles.sectionTitle}>Marathon</Text>
             <View style={styles.marathonInfo}>
               <Text style={styles.marathonText}><Ionicons name="flag" size={18} color={Colors.accentLight} /> Prague Marathon</Text>
-              <Text style={styles.marathonDate}>4. Mai 2026</Text>
+              <Text style={styles.marathonDate}>3. Mai 2026</Text>
             </View>
 
             <Text style={styles.sectionTitle}>Zielzeit</Text>

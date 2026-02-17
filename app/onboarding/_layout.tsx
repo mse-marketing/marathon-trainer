@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { Platform } from 'react-native';
 import { Colors } from '../../src/theme/colors';
 
 export default function OnboardingLayout() {
@@ -6,7 +7,7 @@ export default function OnboardingLayout() {
     <Stack
       screenOptions={{
         headerShown: false,
-        animation: 'slide_from_right',
+        animation: Platform.OS === 'web' ? 'none' : 'slide_from_right',
         contentStyle: { backgroundColor: Colors.background },
       }}
     />

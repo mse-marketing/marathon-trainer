@@ -29,7 +29,12 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "static",
+      "backgroundColor": "#0D1117",
+      "name": "Marathon Trainer",
+      "description": "Dein personalisierter Marathon-Trainingsplan"
     }
   }
 }
